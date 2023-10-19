@@ -34,7 +34,7 @@ RUN pip install --upgrade \
 #Setting up Snowpark Python conda environment
 FROM installer AS deps
 COPY environment.yml* /tmp/installation-scripts/
-RUN conda create -n snowparkenv -c https://repo.anaconda.com/pkgs/snowflake python=3.8
+RUN conda create -n snowparkenv -c https://repo.anaconda.com/pkgs/snowflake python=3.10
 SHELL ["conda", "run", "-n", "snowparkenv", "/bin/bash", "-c"]
 RUN /opt/conda/bin/conda env update -f /tmp/installation-scripts/environment.yml
 
